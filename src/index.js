@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
   updateSearch(event) {
     this.setState({ search: event.target.value });
   }
@@ -87,55 +88,62 @@ class App extends React.Component {
           <br></br>
           <div className="row">
             <div className="col-6">
-              <div class="input-icons">
-                <i className="fa fa-search icon"></i>
-                <input
-                  className="input-field"
-                  type="text"
-                  value={this.state.search}
-                  placeholder="Search"
-                  onChange={this.updateSearch.bind(this)}
-                />
-              </div>
-              <ul className="list-group">
-                {filtered.map((survey, index) => (
-                  <li className="d-flex p-2 " key={survey} value={survey}>
-                    {survey}
-                    <button
-                      className="badge badge-primary badge-pill"
-                      onClick={this.deleteUser.bind(this, index)}
-                    >
-                      +
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <p align="center">
+                <div className="input-icons">
+                  {" "}
+                  <h6>Surveys</h6>
+                  <i className="fa fa-search icon"></i>
+                  <input
+                    className="input-field"
+                    type="text"
+                    value={this.state.search}
+                    placeholder="Search"
+                    onChange={this.updateSearch.bind(this)}
+                  />
+                </div>
+                <ul className="list-group">
+                  {filtered.map((survey, index) => (
+                    <li className="d-flex p-2" key={survey} value={survey}>
+                      {survey}
+                      <button
+                        className="badge badge-primary badge-pill"
+                        onClick={this.deleteUser.bind(this, index)}
+                      >
+                        +
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </p>
             </div>
             <div className="col-6">
-              <div class="input-icons">
-                <i className="fa fa-search icon"></i>
-                <input
-                  className="input-field"
-                  type="text"
-                  value={this.state.search2}
-                  placeholder="Search"
-                  onChange={this.updateSearch2.bind(this)}
-                ></input>
-              </div>
+              <p align="center">
+                <div className="input-icons">
+                  <h6>Assigned Surveys</h6>
+                  <i className="fa fa-search icon"></i>
+                  <input
+                    className="input-field"
+                    type="text"
+                    value={this.state.search2}
+                    placeholder="Search"
+                    onChange={this.updateSearch2.bind(this)}
+                  ></input>
+                </div>
 
-              <ul text-align="center" className="list-group">
-                {filtered2.map((survey, index) => (
-                  <li className="d-flex p-2 " key={survey} value={survey}>
-                    {survey}
-                    <button
-                      className="badge badge-primary badge-pill"
-                      onClick={this.deleteUser2.bind(this, index)}
-                    >
-                      -
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                <ul className="list-group">
+                  {filtered2.map((survey, index) => (
+                    <li className="d-flex p-2 " key={survey} value={survey}>
+                      {survey}
+                      <button
+                        className="badge badge-primary badge-pill"
+                        onClick={this.deleteUser2.bind(this, index)}
+                      >
+                        -
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </p>
             </div>
           </div>
         </div>

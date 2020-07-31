@@ -4,6 +4,7 @@
 
 .input-icons {
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .icon {
@@ -13,5 +14,11 @@
 
 .input-field {
   padding: 5px;
+  text-align: center;
+}
+.list-group {
+  display: inline-block;
+}
+ul {
   text-align: center;
 }
